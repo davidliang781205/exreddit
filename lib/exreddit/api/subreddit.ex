@@ -18,6 +18,11 @@ defmodule ExReddit.Api.Subreddit do
     get({:uri, "/r/#{subreddit}/new"}, token, opts)
     |> get_request_data
   end
+  
+  def get_hot_threads(token, subreddit, opts \\ []) do
+    get({:uri, "/r/#{subreddit}/hot"}, token, opts)
+    |> get_request_data
+  end
 
   def get_comments(token, subreddit, thread_id, opts \\ []) do
     get({:uri, "/r/#{subreddit}/comments/#{thread_id}"}, token, opts)
